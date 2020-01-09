@@ -39,29 +39,39 @@
     const liffId = "1653746756-2Lrl3yld"
     // Text I want to send
     const text = "You've successfully sent a message! Hooray!"
+    const oktext = "you got it!"
+    const notext = "you didn't get it!"
     // Containers displaying profile information
     const Name = document.querySelector('profile_name');
     const Img = document.querySelector("profile_img");
 
     // Callbacks being called after clicking the button
     function showProfile() {
-      liff.getProfile().then(profile =>{
-        // const {pictureUrl,displayName} = profile;
+      liff.getProfile()
+      .then(profile => {
         const name = profile.displayName
-        if (name != null){
-          // print("***************")
-          echo ("yeeeeeeees");
-          Name.textContent = name;
-        }else{
-          echo ("noooooooooo");
-          print("-----displayName is null-----")
-        }
+      })
+      .catch((err) => {
+        console.log('error', err);
+      });
+
+      // liff.getProfile().then(profile =>{
+      //   // const {pictureUrl,displayName} = profile;
+      //   const name = profile.displayName
+      //   if (name != null){
+      //     liff.sendMessages([{ type: "text", oktext}]
+      //     Name.textContent = name;
+      //   }else{
+      //     echo ("noooooooooo");
+      //     print("-----displayName is null-----")
+      //   }
+
         // if (pictureUrl != null){
         //   Img.src = pictureUrl;
         // }else{
         //   print("----- pictureUrl is null-----")
         // }
-      })
+      // })
     }
     function sendMessage() {
       liff.sendMessages([{ type: "text", text}])
