@@ -47,8 +47,18 @@
     function showProfile() {
       liff.getProfile().then(profile =>{
         const {pictureUrl,displayName} = profile;
-        Name.textContent = displayName;
-        Img.src = pictureUrl;
+        if (displayName != null){
+          print("***************")
+          Name.textContent = displayName;
+        }else{
+          print("-----displayName is null-----")
+        }
+        if (pictureUrl != null){
+          print("***************")
+          Img.src = pictureUrl;
+        }else{
+          print("----- pictureUrl is null-----")
+        }
       })
     }
     function sendMessage() {
