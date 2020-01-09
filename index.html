@@ -39,8 +39,8 @@
     const liffId = "1653746756-2Lrl3yld"
     // Text I want to send
     const text = "You've successfully sent a message! Hooray!"
-    const oktext = "you got it!"
-    const notext = "you didn't get it!"
+    // const oktext = "you got it!"
+    // const notext = "you didn't get it!"
     // Containers displaying profile information
     const Name = document.querySelector('profile_name');
     const Img = document.querySelector("profile_img");
@@ -49,10 +49,14 @@
     function showProfile() {
       liff.getProfile()
       .then(profile => {
-        const name = profile.displayName
+        const name = profile.displayName;
+        const pic = profile.pictureUrl;
+        const status = profile.statusMessage;
         console.log('name', name);
+        console.log('pic', pic);
+        console.log('status', status);
         Name.textContent = name;
-        console.log('yeeees!');
+        Img.src = pic;
       })
       .catch((err) => {
         console.log('error', err);
