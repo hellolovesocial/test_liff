@@ -55,7 +55,7 @@
     }
 
     liff.init({liffId}).then(() => {
-      if (!liff.isLoggedIn()) {
+      if (liff.isLoggedIn()) {
       }
       else{
         liff.login();
