@@ -24,6 +24,7 @@
   </head>
   <body>
     <h1>LIFF LIVE CODING</h1>
+    <h2>Minako's Page!!</h2>
     <div class="flex">
       <button class="btn" id="showProfile">showProfile</button>
       <button class="btn" id="sendMessage">sendMessage</button>
@@ -35,7 +36,7 @@
   </body>
   <script>
     // My LIFF ID
-    const liffId = "1653399672-jWXpkKdz"
+    const liffId = "1653746756-2Lrl3yld"
     // Text I want to send
     const text = "You've successfully sent a message! Hooray!"
     // Containers displaying profile information
@@ -44,9 +45,24 @@
 
     // Callbacks being called after clicking the button
     function showProfile() {
+      liff.getProfile().then(profile =>{
+        const {pictureUrl,displayName} = profile;
+        Name.textContent = displayName;
+        Img.src = pictureUrl;
+      })
     }
     function sendMessage() {
+      liff.sendMessages([{ type: "text", text}])
     }
+
+    liff.init({liffId}).then(() => {
+      if (liff.isLoggedIn()) {
+        liff.login();
+      }
+      else{
+        liff.login();
+      }
+    })
 
     // Declaration to bind buttons and callbacks
     document.querySelector("#showProfile").addEventListener("click", showProfile)
