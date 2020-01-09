@@ -35,12 +35,14 @@
       <p id="profile_name"></p>
       <p id="profile_status"></p>
     </div>
+    <button class="btn" id="closeWindowButton">close</button>
+
   </body>
   <script>
     // My LIFF ID
     const liffId = "1653746756-2Lrl3yld"
     // Text I want to send
-    const text = "You've successfully sent a message! Hooray!"
+    const text = "I sent test message!"
     // Containers displaying profile information
     const Name = document.getElementById('profile_name');
     const Img = document.getElementById("profile_img");
@@ -64,13 +66,27 @@
         console.log('error', err);
       });
     }
+
     function sendMessage() {
-      liff.sendMessages([{ type: "text", text}])
+      liff.sendMessages(
+        [{ type: "text", text}]
+        ).then(function() {
+            window.alert('Message sent');
+        }).catch(function(error) {
+            window.alert('Error sending message: ' + error);
+        });
+    }
+
+    function closeWindow() {
+      if (!liff.isInClient()) {
+          sendAlertIfNotInClient();
+      } else {
+          liff.closeWindow();
+      }
     }
 
     liff.init({liffId}).then(() => {
       if (liff.isLoggedIn()) {
-//         liff.login();
       }
       else{
         liff.login();
@@ -80,5 +96,7 @@
     // Declaration to bind buttons and callbacks
     document.querySelector("#showProfile").addEventListener("click", showProfile)
     document.querySelector("#sendMessage").addEventListener("click", sendMessage)
+    document.getElementById('closeWindowButton').addEventListener('click', closeWindow)
+
   </script>
 </html>
