@@ -47,11 +47,12 @@
 
     // Callbacks being called after clicking the button
     function showProfile() {
-      console.log('came to showProfile');
       liff.getProfile()
       .then(profile => {
         const name = profile.displayName
         console.log('name', name);
+        Name.textContent = name;
+        console.log('yeeees!');
       })
       .catch((err) => {
         console.log('error', err);
