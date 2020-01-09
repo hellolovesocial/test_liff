@@ -50,11 +50,11 @@
       liff.getProfile()
       .then(profile => {
         const name = profile.displayName
+        console.log('name', name);
       })
       .catch((err) => {
         console.log('error', err);
       });
-
       // liff.getProfile().then(profile =>{
       //   // const {pictureUrl,displayName} = profile;
       //   const name = profile.displayName
