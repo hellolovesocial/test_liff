@@ -13,10 +13,16 @@
         display: flex;
         justify-content: space-around;
         margin-bottom: 10px;
+        width: 100%;
+        text-align:center;
       }
+      /* .p{
+        vertical-align: middle;
+      } */
       .img {
         border-radius: 50%;
-        width: 100px;
+        width: 50px;
+        height: 50px;
       }
     </style>
     <!-- Load LIFF SDK -->
@@ -32,6 +38,7 @@
     <div class="flex">
       <img id="profile_img" class="img" src=""/>
       <p id="profile_name"></p>
+      <p id="profile_status"></p>
     </div>
   </body>
   <script>
@@ -39,11 +46,10 @@
     const liffId = "1653746756-2Lrl3yld"
     // Text I want to send
     const text = "You've successfully sent a message! Hooray!"
-    // const oktext = "you got it!"
-    // const notext = "you didn't get it!"
     // Containers displaying profile information
     const Name = document.getElementById('profile_name');
     const Img = document.getElementById("profile_img");
+    const Status = document.getElementById("profile_status");
 
     // Callbacks being called after clicking the button
     function showProfile() {
@@ -56,28 +62,12 @@
         console.log('pic', pic);
         console.log('status', status);
         Name.innerHTML = name;
+        Status.innerHTML = status;
         Img.src = pic;
       })
       .catch((err) => {
         console.log('error', err);
       });
-      // liff.getProfile().then(profile =>{
-      //   // const {pictureUrl,displayName} = profile;
-      //   const name = profile.displayName
-      //   if (name != null){
-      //     liff.sendMessages([{ type: "text", oktext}]
-      //     Name.textContent = name;
-      //   }else{
-      //     echo ("noooooooooo");
-      //     print("-----displayName is null-----")
-      //   }
-
-        // if (pictureUrl != null){
-        //   Img.src = pictureUrl;
-        // }else{
-        //   print("----- pictureUrl is null-----")
-        // }
-      // })
     }
     function sendMessage() {
       liff.sendMessages([{ type: "text", text}])
