@@ -47,6 +47,7 @@
 
     // Callbacks being called after clicking the button
     function showProfile() {
+      console.log('came to showProfile');
       liff.getProfile()
       .then(profile => {
         const name = profile.displayName
