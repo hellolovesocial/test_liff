@@ -42,7 +42,7 @@
     // const oktext = "you got it!"
     // const notext = "you didn't get it!"
     // Containers displaying profile information
-    const Name = document.querySelector('profile_name');
+    const Name = document.getElementById('profile_name');
 //     const Img = document.querySelector("profile_img");
 
     // Callbacks being called after clicking the button
@@ -55,7 +55,7 @@
         console.log('name', name);
         console.log('pic', pic);
         console.log('status', status);
-        Name.textContent = name;
+        Name.innerHTML = name;
 //         Img.src = pic;
       })
       .catch((err) => {
