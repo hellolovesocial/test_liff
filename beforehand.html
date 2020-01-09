@@ -45,13 +45,13 @@
     // Callbacks being called after clicking the button
     function showProfile() {
       liff.getProfile().then(profile =>{
-        const {pictureUrl,displayName} = profile
+        const {pictureUrl,displayName} = profile;
         Name.textContent = displayName;
         Img.src = pictureUrl;
       })
     }
     function sendMessage() {
-      liff.sendMessages([{ type: "text"}], text)
+      liff.sendMessages([{ type: "text", text}])
     }
 
 //     liff.init({liffId}).then(() => {
