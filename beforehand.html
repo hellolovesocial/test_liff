@@ -54,13 +54,13 @@
       liff.sendMessages([{ type: "text"}], text)
     }
 
-    liff.init({liffId}).then(() => {
-      if (!liff.isLoggedIn()) {
-      }
-      else{
-        liff.login();
-      }
-    })
+    // liff.init({liffId}).then(() => {
+    //   if (!liff.isLoggedIn()) {
+    //   }
+    //   else{
+    //     liff.login();
+    //   }
+    // })
 
     // Declaration to bind buttons and callbacks
     document.querySelector("#showProfile").addEventListener("click", showProfile)
