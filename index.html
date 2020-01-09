@@ -48,9 +48,9 @@
       liff.getProfile().then(profile =>{
         // const {pictureUrl,displayName} = profile;
         const name = profile.displayName
-        liff.sendMessages([{ type: "text", name}]) 
         if (name != null){
-          print("***************")
+          // print("***************")
+          echo ("hhhhh");
           Name.textContent = name;
         }else{
           print("-----displayName is null-----")
