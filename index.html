@@ -90,7 +90,9 @@
     }
 
     function shareFriends() {
+      console.log('Reached shareFriends Function');
       if (liff.isApiAvailable('shareTargetPicker')) {
+        console.log('Reached inside of shareFriends');
         liff.shareTargetPicker(
           [{ type: "text",
             text: "Hello, World!"
