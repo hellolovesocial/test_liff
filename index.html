@@ -44,9 +44,9 @@
       <h2>Welcome!</h2>
     </div>
     <div class="flex">
-      <button class="btn" id="showProfile">showProfile</button>
-      <button class="btn" id="sendMessage">sendMessage</button>
-      <button class="btn" id="shareFriends">shareFriends</button>
+      <button class="btn" id="showProfile">プロフィール情報を確認</button>
+      <button class="btn" id="sendMessage">施術師を確認</button>
+      <button class="btn" id="shareFriends">友だちにシェア</button>
     </div>
     <div class="flex">
       <img id="profile_img" class="img" src=""/>
@@ -61,12 +61,11 @@
     // My LIFF ID
     const liffId = "1653746756-2Lrl3yld"
     // Text I want to send
-    const text = "I sent test message!"
+    const text = "予約"
     // Containers displaying profile information
     const Name = document.getElementById('profile_name');
     const Img = document.getElementById("profile_img");
     const Status = document.getElementById("profile_status");
-    const myLink = liff.permanentLink.createUrl();
 
     // Callbacks being called after clicking the button
     function showProfile() {
@@ -104,11 +103,7 @@
       if (liff.isApiAvailable('shareTargetPicker')) {
         console.log("reached STP")
         liff.shareTargetPicker(
-          // [{ type: "url", myLink}]
-          // [{type: 'url',
-          //   url: 'https://liff.line.me/1653746756-2Lrl3yld'
-          // }]
-          [{ type: 'text', text: 'https://liff.line.me/1653746756-2Lrl3yld'}]
+          [{ type: 'text', text: '見てほしい！ https://liff.line.me/1653746756-2Lrl3yld'}]
         ).then(function() {
           console.log("reached suc")
           // window.alert('ShareTargetPicker was launched');
