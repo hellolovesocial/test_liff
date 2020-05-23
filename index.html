@@ -93,14 +93,16 @@
     function shareFriends() {
       // print("reached share");
       if (liff.isApiAvailable('shareTargetPicker')) {
+        console.log("reached STP")
         liff.shareTargetPicker(
           [{ type: "text",
             text: "Hello, World!"
           }]
         ).then(function() {
-          window.alert('ShareTargetPicker was launched');
+          console.log("reached suc")
+          // window.alert('ShareTargetPicker was launched');
         }).catch(function(error) {
-          window.alert('Failed to launch ShareTargetPicker');
+          window.alert('Failed to launch ShareTargetPicker'+ error);
         });
       };
     }
@@ -124,7 +126,7 @@
     // Declaration to bind buttons and callbacks
     document.querySelector("#showProfile").addEventListener("click", showProfile)
     document.querySelector("#sendMessage").addEventListener("click", sendMessage)
-    document.querySelector("shareFriends").addEventListener("click", shareFriends)
+    document.querySelector("#shareFriends").addEventListener("click", shareFriends)
     document.getElementById('closeWindowButton').addEventListener('click', closeWindow)
 
   </script>
