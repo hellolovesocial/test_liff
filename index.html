@@ -66,10 +66,11 @@
     const Name = document.getElementById('profile_name');
     const Img = document.getElementById("profile_img");
     const Status = document.getElementById("profile_status");
-    const myLink = liff.permanentLink.createUrl()
+    const myLink = liff.permanentLink.createUrl();
 
     // Callbacks being called after clicking the button
     function showProfile() {
+      console.log('permanentLINK', myLink);
       liff.getProfile()
       .then(profile => {
         const name = profile.displayName;
@@ -104,9 +105,10 @@
         console.log("reached STP")
         liff.shareTargetPicker(
           // [{ type: "url", myLink}]
-          [{type: 'url',
-            url: 'https://liff.line.me/1653746756-2Lrl3yld'
-          }]
+          // [{type: 'url',
+          //   url: 'https://liff.line.me/1653746756-2Lrl3yld'
+          // }]
+          [{ type: 'text', text: 'https://liff.line.me/1653746756-2Lrl3yld'}]
         ).then(function() {
           console.log("reached suc")
           // window.alert('ShareTargetPicker was launched');
