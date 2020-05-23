@@ -1,5 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
+  <!-- <html lang="ja" prefix="og: http://ogp.me/ns#"> -->
+<meta property="og:title" content="MINAKO TEST LIFF">
+<meta property="og:type" content="website">
+<meta property="og:description" content="minakoのテストLIFF">
+<meta property="og:url" content="https://liff.line.me/1653746756-2Lrl3yld">
+<meta property="og:site_name" content="MINAKO SITE NAME">
+<meta property="og:image" content="https://www.soupdesign.co.jp/wordpress/wp-content/uploads/sample_logo.jpg">
   <head>
     <title>MINAKO TEST LIFF</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -59,6 +66,7 @@
     const Name = document.getElementById('profile_name');
     const Img = document.getElementById("profile_img");
     const Status = document.getElementById("profile_status");
+    const myLink = liff.permanentLink.createUrl()
 
     // Callbacks being called after clicking the button
     function showProfile() {
@@ -95,9 +103,7 @@
       if (liff.isApiAvailable('shareTargetPicker')) {
         console.log("reached STP")
         liff.shareTargetPicker(
-          [{ type: "text",
-            text: "Hello, World!"
-          }]
+          [{ type: "url", myLink}]
         ).then(function() {
           console.log("reached suc")
           // window.alert('ShareTargetPicker was launched');
