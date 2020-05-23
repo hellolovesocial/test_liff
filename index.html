@@ -37,8 +37,10 @@
       <h2>Welcome!</h2>
     </div>
     <div class="flex">
-      <button class="btn" id="showProfile">showProfile</button>
-      <button class="btn" id="sendMessage">sendMessage</button>
+      <button class="btn" id="showProfile">自分のプロフィールを見る</button>
+      <button class="btn" id="sendMessage">施術師を開く</button>
+      <button class="btn" id="shareTargetPicker">友だちにシェア</button>
+      <button class="btn" id="isApiAvailable">友だちにシェアapi</button>
     </div>
     <div class="flex">
       <img id="profile_img" class="img" src=""/>
@@ -101,6 +103,20 @@
         console.log("Failed to launch ShareTargetPicker")
       })
     }
+
+    // if (liff.isApiAvailable('shareTargetPicker')) {
+    //   liff.shareTargetPicker([
+    //     {
+    //       type: "text",
+    //       text: "Hello, World!"
+    //     }
+    //   ])
+    //   .then(
+    //     console.log("ShareTargetPicker was launched")
+    //   ).catch(function(res) {
+    //     console.log("Failed to launch ShareTargetPicker")
+    //   })
+    // }
 
     function closeWindow() {
       if (!liff.isInClient()) {
