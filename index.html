@@ -88,6 +88,20 @@
         });
     }
 
+    if (liff.isApiAvailable('shareTargetPicker')) {
+      liff.shareTargetPicker([
+        {
+          type: "text",
+          text: "Hello, World!"
+        }
+      ])
+      .then(
+        console.log("ShareTargetPicker was launched")
+      ).catch(function(res) {
+        console.log("Failed to launch ShareTargetPicker")
+      })
+    }
+
     function closeWindow() {
       if (!liff.isInClient()) {
           sendAlertIfNotInClient();
