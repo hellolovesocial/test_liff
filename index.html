@@ -103,7 +103,10 @@
       if (liff.isApiAvailable('shareTargetPicker')) {
         console.log("reached STP")
         liff.shareTargetPicker(
-          [{ type: "url", myLink}]
+          // [{ type: "url", myLink}]
+          [{type: 'url',
+            url: 'https://liff.line.me/1653746756-2Lrl3yld'
+          }]
         ).then(function() {
           console.log("reached suc")
           // window.alert('ShareTargetPicker was launched');
