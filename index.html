@@ -98,10 +98,14 @@
       const val = document.getElementById("tomorrow").value;
       const time = document.getElementById("appt-time").value;
       console.log('val', val);
+      console.log('time', time);
       liff.sendMessages(
         [{
           type: "text",
-          text: val + " " + time + "日時希望"
+          text: val + "/n" + time
+        },{
+          type: "text",
+          text: "日時希望" 
         }]
         ).then(function() {
             window.alert('情報が送られました。トーク画面に戻りましょう');
