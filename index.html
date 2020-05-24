@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="ja">
   <!-- <html lang="ja" prefix="og: http://ogp.me/ns#"> -->
-<meta property="og:title" content="MINAKO TEST LIFF">
-<meta property="og:type" content="website">
-<meta property="og:description" content="minakoのテストLIFF">
-<meta property="og:url" content="https://liff.line.me/1653746756-2Lrl3yld">
-<meta property="og:site_name" content="MINAKO SITE NAME">
-<meta property="og:image" content="https://www.soupdesign.co.jp/wordpress/wp-content/uploads/sample_logo.jpg">
   <head>
     <title>Massage mina test</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="MINAKO TEST LIFF">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="minakoのテストLIFF">
+    <meta property="og:url" content="https://liff.line.me/1653746756-2Lrl3yld">
+    <meta property="og:site_name" content="MINAKO SITE NAME">
+    <meta property="og:image" content="https://www.soupdesign.co.jp/wordpress/wp-content/uploads/sample_logo.jpg">
     <style>
       .btn {
         height: 40px;
@@ -44,6 +44,8 @@
       <h2>はじめまして</h2>
     </div>
     <div class="flex">
+      <input type="date" name="tomorrow" id="tomorrow">
+      <!-- <label class="date-edit"><input type="date" value="2019-08-22" /></label> -->
       <button class="btn" id="sendMessage">施術師を確認</button>
       <button class="btn" id="shareFriends">友だちにシェア</button>
     </div>
@@ -87,9 +89,26 @@
       });
     }
 
+    function () {
+      console.log('fffff');
+      var tomorrow = new Date();
+      tomorrow.setDate(tomorrow.getDate()+1); //翌日の日付を取得
+      var yyyy = tomorrow.getFullYear();
+      var mm = ("0"+(tomorrow.getMonth()+1)).slice(-2);
+      var dd = ("0"+tomorrow.getDate()).slice(-2);
+      document.getElementById("tomorrow").value=yyyy+'-'+mm+'-'+dd;
+    }
+
     function sendMessage() {
+      console.log('wwwwww');
+      var val = $('#tomorrow').val();
+      console.log('dddddddddd');
       liff.sendMessages(
-        [{ type: "text", text}]
+        [{
+          type: "text",
+          text: val
+        }]
+        // [{ type: "text", text}]
         ).then(function() {
             window.alert('情報が送られました。トーク画面に戻りましょう');
         }).catch(function(error) {
