@@ -10,7 +10,10 @@
     <meta property="og:url" content="https://liff.line.me/1653746756-2Lrl3yld">
     <meta property="og:site_name" content="MINAKO SITE NAME">
     <meta property="og:image" content="https://www.soupdesign.co.jp/wordpress/wp-content/uploads/sample_logo.jpg">
-    <style>
+    <style>font-family: 'Noto Sans JP', sans-serif;
+      .label {
+      font-family: "ＭＳ Ｐゴシック",sans-serif;
+      }
       .btn {
         height: 40px;
         border: #DDD;
@@ -27,10 +30,12 @@
         height: 100px;
       }
       .h1 {
+        font-family: "ＭＳ Ｐゴシック",sans-serif;
         text-align:center; 
         width: 100%;
       }
       .h2 {
+        font-family: "ＭＳ Ｐゴシック",sans-serif;
         text-align:center;
         width: 100%;
       }
@@ -102,7 +107,7 @@
       liff.sendMessages(
         [{
           type: "text",
-          text: val + "/n" + time
+          text: val + " " + time
         },{
           type: "text",
           text: "日時希望" 
