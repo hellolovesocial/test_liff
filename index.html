@@ -40,8 +40,8 @@
   </head>
   <body>
     <div class="flex">
-      <h1>MINAKO TEST LIFF</h1>
-      <h2>Welcome!</h2>
+      <h1>Massage minako</h1>
+      <h2>はじめまして</h2>
     </div>
     <div class="flex">
       <button class="btn" id="showProfile">プロフィール情報を確認</button>
@@ -69,7 +69,6 @@
 
     // Callbacks being called after clicking the button
     function showProfile() {
-      // console.log('permanentLINK', myLink);
       liff.getProfile()
       .then(profile => {
         const name = profile.displayName;
@@ -88,27 +87,22 @@
     }
 
     function sendMessage() {
-      // print("reached message");
       liff.sendMessages(
         [{ type: "text", text}]
         ).then(function() {
-            window.alert('Message sent');
+            window.alert('情報が送られました。トーク画面に戻りましょう');
         }).catch(function(error) {
-            window.alert('Error sending message: ' + error);
+            window.alert('エラーが起こりました。：' + error);
         });
     }
 
     function shareFriends() {
-      // print("reached share");
       if (liff.isApiAvailable('shareTargetPicker')) {
-        console.log("reached STP")
         liff.shareTargetPicker(
           [{ type: 'text', text: '見てほしい！ https://liff.line.me/1653746756-2Lrl3yld'}]
         ).then(function() {
-          console.log("reached suc")
-          // window.alert('ShareTargetPicker was launched');
         }).catch(function(error) {
-          window.alert('Failed to launch ShareTargetPicker'+ error);
+          window.alert('シェア機能でエラーが起こりました：'+ error);
         });
       };
     }
