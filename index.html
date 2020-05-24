@@ -89,20 +89,20 @@
       });
     }
 
-    function () {
-      console.log('fffff');
-      var tomorrow = new Date();
-      tomorrow.setDate(tomorrow.getDate()+1); //翌日の日付を取得
-      var yyyy = tomorrow.getFullYear();
-      var mm = ("0"+(tomorrow.getMonth()+1)).slice(-2);
-      var dd = ("0"+tomorrow.getDate()).slice(-2);
-      document.getElementById("tomorrow").value=yyyy+'-'+mm+'-'+dd;
-    }
+    // function () {
+    //   console.log('fffff');
+    //   var tomorrow = new Date();
+    //   tomorrow.setDate(tomorrow.getDate()+1); //翌日の日付を取得
+    //   var yyyy = tomorrow.getFullYear();
+    //   var mm = ("0"+(tomorrow.getMonth()+1)).slice(-2);
+    //   var dd = ("0"+tomorrow.getDate()).slice(-2);
+    //   document.getElementById("tomorrow").value=yyyy+'-'+mm+'-'+dd;
+    // }
 
     function sendMessage() {
       console.log('wwwwww');
-      var val = $('#tomorrow').val();
-      console.log('dddddddddd');
+      const val = $('#tomorrow').val();
+      console.log('val', val);
       liff.sendMessages(
         [{
           type: "text",
