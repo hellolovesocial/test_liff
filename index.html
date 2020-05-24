@@ -44,15 +44,16 @@
       <h2>はじめまして</h2>
     </div>
     <div class="flex">
-      <input type="date" name="tomorrow" id="tomorrow">
-      <button class="btn" id="sendMessage">予約希望日を送信</button>
-    </div>
+      <label>予約したい日時を選択</label>
+      <input type="date" name="tomorrow" id="tomorrow"></br>
+      <input id="appt-time" type="time" name="appt-time"></br>
+      <button class="btn" id="sendMessage">送信</button>
+    </div></br>
     <div class="flex">
-      <label>追加したいメッセージを入れてね</label>
-      <input type="text" id="message" name="message" size="30" placeholder="メッセージを入力">
-      </br>
+      <label>追加したいメッセージを入力</label>
+      <input type="text" id="message" name="message" size="30" placeholder="メッセージを入力"></br>
       <button class="btn" id="shareFriends">友だちにシェア</button>
-    </div>
+    </div></br>
     <div class="flex">
       <button class="btn" id="closeWindowButton">close</button>
     </div>
@@ -94,20 +95,13 @@
     }
 
     function sendMessage() {
-      // const tomorrow = new Date();
-      // tomorrow.setDate(tomorrow.getDate()+1); //翌日の日付を取得
-      // const yyyy = tomorrow.getFullYear();
-      // const mm = ("0"+(tomorrow.getMonth()+1)).slice(-2);
-      // const dd = ("0"+tomorrow.getDate()).slice(-2);
-      // console.log('yyyy', yyyy);
-      // console.log('mm', mm);
-      // console.log('dd', dd);
       const val = document.getElementById("tomorrow").value;
+      const time = document.getElementById("appt-time").value;
       console.log('val', val);
       liff.sendMessages(
         [{
           type: "text",
-          text: val + "に予約を希望する"
+          text: val + " " + time + "日時希望"
         }]
         ).then(function() {
             window.alert('情報が送られました。トーク画面に戻りましょう');
