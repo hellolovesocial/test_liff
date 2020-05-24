@@ -101,7 +101,16 @@
 
     function sendMessage() {
       console.log('wwwwww');
-      const val = $('#tomorrow').val();
+      var tomorrow = new Date();
+      tomorrow.setDate(tomorrow.getDate()+1); //翌日の日付を取得
+      var yyyy = tomorrow.getFullYear();
+      var mm = ("0"+(tomorrow.getMonth()+1)).slice(-2);
+      var dd = ("0"+tomorrow.getDate()).slice(-2);
+      console.log('yyyy', yyyy);
+      console.log('mm', mm);
+      console.log('dd', dd);
+      const val = document.getElementById("tomorrow").value=yyyy+'-'+mm+'-'+dd;
+      // const val = $('#tomorrow').val();
       console.log('val', val);
       liff.sendMessages(
         [{
