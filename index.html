@@ -102,7 +102,7 @@
       console.log('yyyy', yyyy);
       console.log('mm', mm);
       console.log('dd', dd);
-      const val = document.getElementById("tomorrow").value=yyyy+'-'+mm+'-'+dd;
+      const val = document.getElementById("tomorrow").value;
       console.log('val', val);
       liff.sendMessages(
         [{
@@ -121,9 +121,12 @@
       console.log('message', message);
       if (liff.isApiAvailable('shareTargetPicker')){
         liff.shareTargetPicker(
-          [{ type: 'text', text:  message + 'https://liff.line.me/1653746756-2Lrl3yld'}]
+          [{
+            type: 'text',
+            text: message + 'https://liff.line.me/1653746756-2Lrl3yld'
+          }]
         ).then(function() {
-          window.alert('シェアしました');
+          // window.alert('シェアしました');
         }).catch(function(error) {
           window.alert('シェア機能でエラーが起こりました：'+ error);
         });
