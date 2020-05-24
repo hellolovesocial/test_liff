@@ -94,14 +94,14 @@
     }
 
     function sendMessage() {
-      const tomorrow = new Date();
-      tomorrow.setDate(tomorrow.getDate()+1); //翌日の日付を取得
-      const yyyy = tomorrow.getFullYear();
-      const mm = ("0"+(tomorrow.getMonth()+1)).slice(-2);
-      const dd = ("0"+tomorrow.getDate()).slice(-2);
-      console.log('yyyy', yyyy);
-      console.log('mm', mm);
-      console.log('dd', dd);
+      // const tomorrow = new Date();
+      // tomorrow.setDate(tomorrow.getDate()+1); //翌日の日付を取得
+      // const yyyy = tomorrow.getFullYear();
+      // const mm = ("0"+(tomorrow.getMonth()+1)).slice(-2);
+      // const dd = ("0"+tomorrow.getDate()).slice(-2);
+      // console.log('yyyy', yyyy);
+      // console.log('mm', mm);
+      // console.log('dd', dd);
       const val = document.getElementById("tomorrow").value;
       console.log('val', val);
       liff.sendMessages(
