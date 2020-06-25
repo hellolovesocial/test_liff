@@ -26,19 +26,32 @@
         letter-spacing: 1px;
       }
       
-       .btn {
+       /* ここから下がボタンのCSS　*/
+      .btn-icon {
         display: inline-block;
-        padding: 0.5em 1em;
+        max-width: 180px;
+        text-align: left;
+        background-color: #9ec34b;
+        font-size: 16px;
+        color: #FFF;
         text-decoration: none;
-        background: #f7f7f7;
-        border-left: solid 6px #833A09;
-        color: #833A09;
         font-weight: bold;
-        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+        padding: 8px 16px 8px 32px;
+        border-radius: 4px;
+        position: relative;
       }
-      .btn:active {
-        box-shadow: inset 0 0 2px rgba(128, 128, 128, 0.1);
-        transform: translateY(2px);
+
+      .btn-icon:before {
+        font-family: "FontAwesome";
+        content: "\f105";/* 好きなフォントアイコンを　*/
+        position: absolute;
+        left: 16px;
+        top: 50%;
+        margin-top: -8px;
+      }
+
+      .btn-icon:hover {
+        opacity: 0.8;
       }
 
       .profile {
