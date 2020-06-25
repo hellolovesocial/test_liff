@@ -31,27 +31,20 @@
         display: inline-block;
         max-width: 180px;
         text-align: left;
-        background-color: #9ec34b;
+        border: 2px solid #9ec34b;
         font-size: 16px;
-        color: #FFF;
+        color: #9ec34b;
         text-decoration: none;
         font-weight: bold;
-        padding: 8px 16px 8px 32px;
+        padding: 8px 16px;
         border-radius: 4px;
-        position: relative;
-      }
-
-      .btn:before {
-        font-family: "FontAwesome";
-        content: "\f105";/* 好きなフォントアイコンを　*/
-        position: absolute;
-        left: 16px;
-        top: 50%;
-        margin-top: -8px;
+        transition: .4s;
       }
 
       .btn:hover {
-        opacity: 0.8;
+        background-color: #9ec34b;
+        border-color: #cbe585;
+        color: #FFF;
       }
 
       .profile {
