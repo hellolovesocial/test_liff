@@ -167,6 +167,7 @@
     }
 
     function shareFriends() {
+      console.log('shareFriends Started');
       const message = document.getElementById("message").value
       console.log('message', message);
       if (liff.isApiAvailable('shareTargetPicker')){
