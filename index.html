@@ -193,6 +193,7 @@
 
     liff.init({liffId}).then(() => {
       if (liff.isLoggedIn()) {
+        console.log('liff.initID?', liffId);
       }
       else{
         liff.login();
