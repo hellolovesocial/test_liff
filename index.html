@@ -235,9 +235,11 @@
     
     liff.getProfile()
       .then(profile => {
+        const uid = profile.userId;
         const name = profile.displayName;
         const pic = profile.pictureUrl;
 //         const status = profile.statusMessage;
+        console.log('uid', uid);
         console.log('name', name);
         console.log('pic', pic);
 //         console.log('status', status);
