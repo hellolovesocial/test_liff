@@ -127,7 +127,6 @@
       <button class="btn" id="showProfile">プロフィール情報を確認</button></br>
       <img id="profile_img" class="img" src=""/>
       <p id="profile_name"></p>
-<!--       <p id="profile_status"></p> -->
     </div>
 
 <!--   
@@ -146,20 +145,18 @@
     // Containers displaying profile information
     const Name = document.getElementById('profile_name');
     const Img = document.getElementById("profile_img");
-    const Status = document.getElementById("profile_status");
 
     // Callbacks being called after clicking the button
     function showProfile() {
       liff.getProfile()
       .then(profile => {
+        const uid = profile.userId;
         const name = profile.displayName;
         const pic = profile.pictureUrl;
-        const status = profile.statusMessage;
+        console.log('uid', uid);
         console.log('name', name);
         console.log('pic', pic);
-        console.log('status', status);
         Name.innerHTML = name;
-        Status.innerHTML = status;
         Img.src = pic;
       })
       .catch((err) => {
@@ -233,23 +230,7 @@
       }
     })
     
-    liff.getProfile()
-      .then(profile => {
-        const uid = profile.userId;
-        const name = profile.displayName;
-        const pic = profile.pictureUrl;
-//         const status = profile.statusMessage;
-        console.log('uid', uid);
-        console.log('name', name);
-        console.log('pic', pic);
-//         console.log('status', status);
-        Name.innerHTML = name;
-//         Status.innerHTML = status;
-        Img.src = pic;
-      })
-      .catch((err) => {
-        console.log('error', err);
-      });
+    
 
     // Declaration to bind buttons and callbacks
     document.querySelector("#scanCode").addEventListener("click", scanCode)
