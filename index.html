@@ -212,11 +212,7 @@
     }
 
     function closeWindow() {
-      if (!liff.isInClient()) {
-          sendAlertIfNotInClient();
-      } else {
-          liff.closeWindow();
-      }
+      console.log('Closed!!');
     }
 
     liff.init({liffId}).then(() => {
