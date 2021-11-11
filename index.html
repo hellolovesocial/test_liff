@@ -127,7 +127,7 @@
       <button class="btn" id="showProfile">プロフィール情報を確認</button></br>
       <img id="profile_img" class="img" src=""/>
       <p id="profile_name"></p>
-      <p id="profile_status"></p>
+<!--       <p id="profile_status"></p> -->
     </div>
 
 <!--   
@@ -168,7 +168,9 @@
     }
     
     function scanCode() {
-      liff.scanCode().then(result => {
+      console.log('scanCodeが呼ばれた！');
+      liff.scanCodeV2().then(result => {
+        console.log('liff.scanCodeV2()済み');
     // result = { value: '' }
   });
 }
@@ -233,12 +235,12 @@
       .then(profile => {
         const name = profile.displayName;
         const pic = profile.pictureUrl;
-        const status = profile.statusMessage;
+//         const status = profile.statusMessage;
         console.log('name', name);
         console.log('pic', pic);
-        console.log('status', status);
+//         console.log('status', status);
         Name.innerHTML = name;
-        Status.innerHTML = status;
+//         Status.innerHTML = status;
         Img.src = pic;
       })
       .catch((err) => {
