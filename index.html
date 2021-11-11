@@ -225,6 +225,8 @@
     liff.init({liffId}).then(() => {
       if (liff.isLoggedIn()) {
         console.log('liff.initID?', liffId);
+        const idToken = liff.getIDToken();
+        console.log('idToken', idToken);
       }
       else{
         liff.login();
