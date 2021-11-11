@@ -172,21 +172,7 @@
     // result = { value: '' }
   });
 }
-      liff.getProfile()
-      .then(profile => {
-        const name = profile.displayName;
-        const pic = profile.pictureUrl;
-        const status = profile.statusMessage;
-        console.log('name', name);
-        console.log('pic', pic);
-        console.log('status', status);
-        Name.innerHTML = name;
-        Status.innerHTML = status;
-        Img.src = pic;
-      })
-      .catch((err) => {
-        console.log('error', err);
-      });
+      
 
     function sendMessage() {
       const val = document.getElementById("tomorrow").value;
@@ -242,6 +228,22 @@
         liff.login();
       }
     })
+    
+    liff.getProfile()
+      .then(profile => {
+        const name = profile.displayName;
+        const pic = profile.pictureUrl;
+        const status = profile.statusMessage;
+        console.log('name', name);
+        console.log('pic', pic);
+        console.log('status', status);
+        Name.innerHTML = name;
+        Status.innerHTML = status;
+        Img.src = pic;
+      })
+      .catch((err) => {
+        console.log('error', err);
+      });
 
     // Declaration to bind buttons and callbacks
     document.querySelector("#scanCode").addEventListener("click", scanCode)
